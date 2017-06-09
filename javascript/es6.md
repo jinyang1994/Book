@@ -1,56 +1,8 @@
-# fff
+# let 和 const 命令
 
-> An awesome project.
+## let 命令
 
-```javascript
-function () {
-  console.log(123);
-}
-```
+用来声明变量，与`var`类似，但是不同的是，`let`是块级作用域。
 
-<div>hello {{ msg }}</div>
+!> JavaScript引擎内部会在`for`循环中记录上一次循环的变量，在初始化时会根据上一次的变量值去计算本轮的值。另外，`let`在`for`循环中，循环语句与循环体享受不同的作用域。
 
-<script>
-  new Vue({
-    el: '#main',
-    data: { msg: 'Vue' }
-  })
-</script>
-
-# ddddd
-
-> An awesome project.
-
-```javascript
-function () {
-  console.log(123);
-}
-```
-
-<div>hello {{ msg }}</div>
-
-<script>
-  new Vue({
-    el: '#main',
-    data: { msg: 'Vue' }
-  })
-</script>
-
-# fffff
-
-> An awesome project.
-
-```javascript
-function () {
-  console.log(123);
-}
-```
-
-<div>hello {{ msg }}</div>
-
-<script>
-  new Vue({
-    el: '#main',
-    data: { msg: 'Vue' }
-  })
-</script>
