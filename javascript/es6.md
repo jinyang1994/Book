@@ -12,7 +12,7 @@
 首先回忆一下什么是变量提升。
 在使用`var`声明变量的时候，变量可以在声明之前就使用，但是值为`undefined`。
 
-```
+```javascript
 console.log(foo); // undefined
 
 var foo = 1;
@@ -20,7 +20,7 @@ var foo = 1;
 
 实际执行的是以下操作：
 
-```
+```javascript
 var foo;
 
 console.log(foo);
@@ -29,7 +29,7 @@ foo = 1;
 
 但是在使用`let`声明变量的时候，不存在变量提升的情况。也就是在声明前使用变量，会抛出一个错误。
 
-```
+```javascript
 console.log(foo); // ReferenceError
 let foo = 1;
 ```
