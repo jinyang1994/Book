@@ -1,6 +1,5 @@
 - JavaScript
-    - [ES6 - let和const](javascript/es6-let和const.md)
-    - [ES6 - 变量的解构赋值](javascript/es6-变量的解构赋值.md)
+    - [ESMAScript 6](javascript/es6/let和const.md)
 
 - CSS
     - [敬请期待](/)
