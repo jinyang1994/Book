@@ -256,8 +256,3 @@ import getGlobal from 'system.global';
 const global = getGlobal();
 ```
 
-## 变量的解构赋值
-
-### 数组的解构赋值
-
-
