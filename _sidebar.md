@@ -1,5 +1,5 @@
 - JavaScript
-    - [ESMAScript 6](javascript/es6/let和const.md)
+    - [ESMAScript 6](javascript/es6/let-const.md)
 
 - CSS
     - [敬请期待](/)
