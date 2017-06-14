@@ -1,13 +1,11 @@
-# ECMAScript 6
+# ES6 - let 和 const
 
-## let 和 const
-
-### let 命令
+## let 命令
 用来声明变量，与`var`类似，但是不同的是，`let`是块级作用域。
 
 !> JavaScript引擎内部会在`for`循环中记录上一次循环的变量，在初始化时会根据上一次的变量值去计算本轮的值。另外，`let`在`for`循环中，循环语句与循环体享受不同的作用域。
 
-### 不存在变量提升
+## 不存在变量提升
 
 首先回忆一下什么是变量提升。
 在使用`var`声明变量的时候，变量可以在声明之前就使用，但是值为`undefined`。
@@ -34,7 +32,7 @@ console.log(foo); // ReferenceError
 let foo = 1;
 ```
 
-### 暂时性死区
+## 暂时性死区
 
 在块级作用域中存在`let`命令，那么就在受外界影响。
 
@@ -66,7 +64,7 @@ let x = x; // ReferenceError: x is not defined
 ```
 
 
-### 不允许重复声明
+## 不允许重复声明
 
 `let`不允许在相同作用域内，重复声明同一个变量。
 
@@ -97,7 +95,7 @@ function (arg) {
 }
 ```
 
-### 块级作用域
+## 块级作用域
 
 ES6之前是没有块级作用域的概念的。
 
@@ -143,7 +141,7 @@ let x = do {
 }
 ```
 
-### const 命令
+## const 命令
 
 `const`命令，用来声明一个常量，在ES6中是不允许`const`声明时不进行赋值的。
 
@@ -180,13 +178,13 @@ const constantize = (obj) => {
 }
 ```
 
-### 6种声明变量的方式
+## 6种声明变量的方式
 
 * `var`命令和`function`命令
 * `let`命令和`const`命令
 * `import`命令和`class`命令
 
-### window对象
+## window对象
 
 `let`命令、`const`命令、`class`命令在顶层对象声明时，并不像`var`命令和`function`命令那样，称为顶层对象的属性。
 
@@ -198,7 +196,7 @@ let b = 1;
 console.log(window.b) // undefined
 ```
 
-### global对象
+## global对象
 
 ES5在各环境中实现的不统一。
 
