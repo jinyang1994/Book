@@ -127,10 +127,139 @@ if (true) {
     function f() {} // 不报错
 }
 
-if (true) {
+if (true) 
     function f() {} // 报错
+```
+
+
+**块级作用域的本质是一个语句，是一个没有返回值得代码块**
+
+但是在一个提案中，提到了`do`表达式使块级作用域变成表达式，当然也可以有**返回值**
+
+```javascript
+let x = do {
+    let t = f();
+    t * t + 1;
 }
 ```
 
+### const 命令
+
+`const`命令，用来声明一个常量，在ES6中是不允许`const`声明时不进行赋值的。
+
+当然`const`与`let`相同，他们都是块级作用域，同样也存在暂时性死区。
+
+```javascript
+if (true) {
+    console.log(MAX) // ReferenceError
+    const MAX = 5;
+}
+
+MAX // Uncaught ReferenceError: MAX is not defined
+```
+
+这里有个误解。`const`并不是变量的值不可改变，而是变量指向的内存地址不可改变。对于`基本数据类型`来说，他们的值就存在对应的内存地址中，但`引用数据类型`，存在内存地址中的仅仅是一个指针，这就导致我们并不能控制`引用数据类型`的数据结构。
+
+```javascript
+const foo = [];
+foo.push(1); // 不报错
+
+foo = [1]; // 报错，因为指针改变了
+```
+
+彻底冻结对象的函数（对象本身和属性都不可改变）
+
+```javascript
+const constantize = (obj) => {
+    Object.freeze(obj);
+    Object.keys(obj).forEach((key, i) => {
+        if (typeof obj[key] === 'object') {
+            constantize(obj[key]);
+        }
+    }
+}
+```
+
+### 6种声明变量的方式
+
+* `var`命令和`function`命令
+* `let`命令和`const`命令
+* `import`命令和`class`命令
+
+### window对象
+
+`let`命令、`const`命令、`class`命令在顶层对象声明时，并不像`var`命令和`function`命令那样，称为顶层对象的属性。
+
+```javascript
+var a = 1;
+console.log(window.a) // 1
+
+let b = 1;
+console.log(window.b) // undefined
+```
+
+### global对象
+
+ES5在各环境中实现的不统一。
+
+* 浏览器里面，顶层对象是`window`，但 Node 和 Web Worker 没有`window`。
+* 浏览器和 Web Worker 里面，`self`也指向顶层对象，但是Node没有`self`。
+* Node 里面，顶层对象是`global`，但其他环境都不支持。
+
+为了兼容各个环境，一般是使用`this`变量，但是有局限性
+
+* 全局环境中，`this`会返回顶层对象。但是，Node模块和ES6模块中，`this`返回的是当前模块。
+* 函数里面的`this`，如果函数不是作为对象的方法运行，而是单纯作为函数运行，`this`会指向顶层对象。但是，严格模式下，这时`this`会返回`undefined`。
+* 不管是严格模式，还是普通模式，`new Function('return this')()`，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么`eval`、`new Function`这些方法都可能无法使用。
+
+勉强的兼容办法
+
+```javascript
+(typeof window !== 'undefined'
+   ? window
+   : (typeof process === 'object' &&
+      typeof require === 'function' &&
+      typeof global === 'object')
+     ? global
+     : this);
+
+// 方法二
+var getGlobal = function () {
+  if (typeof self !== 'undefined') { return self; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  throw new Error('unable to locate global object');
+};
+```
+
+现在有一个提案就是，在各个环境中都存在`global`。
+
+现在可以使用第三方的库`system.global`来实现，所有环境都可以拿到`global`。
+
+这两种写法可以保证各个环境都存在`global`对象
+
+```javascript
+// CommonJS的写法
+require('system.global/shim')();
+
+// ES6模块的写法
+import shim from 'system.global/shim'; 
+shim();
+```
+
+这两种写法可以将顶层对象放入变量`global`
+
+```javascript
+// CommonJS的写法
+var global = require('system.global')();
+
+// ES6模块的写法
+import getGlobal from 'system.global';
+const global = getGlobal();
+```
+
+## 变量的解构赋值
+
+### 数组的解构赋值
 
 
