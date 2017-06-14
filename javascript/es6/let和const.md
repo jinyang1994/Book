@@ -1,4 +1,4 @@
-# ES6 - let 和 const
+# let 和 const
 
 ## let 命令
 用来声明变量，与`var`类似，但是不同的是，`let`是块级作用域。
