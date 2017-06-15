@@ -16,6 +16,12 @@
     name: '读书笔记',
     repo: 'https://github.com/liujinyang1994/Book',
     basePath: './',
+    search: {
+      maxAge: 86400000,
+      paths: 'auto',
+      placeholder: '搜索',
+      noData: '找不到结果',
+    },
     auto2top: true,
     loadSidebar: true,
     maxLevel: 2,
@@ -23,9 +29,10 @@
   };
 </script>
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 <script src="//unpkg.com/vue/dist/vue.min.js"></script>
 <script src="//unpkg.com/vuep/dist/vuep.min.js"></script>
 <script src="//unpkg.com/babel-standalone/babel.min.js"></script>
 <script src="//unpkg.com/babel-plugin-transform-vue-jsx"></script>
-<script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+
 </html>
