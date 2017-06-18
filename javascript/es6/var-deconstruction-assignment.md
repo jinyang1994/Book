@@ -7,7 +7,7 @@
 ```javascript
 let [foo, [[bar], baz]] = [1, [[2], 3]];
 
-console.log(foo, bar, baz); //1, 2, 3 
+console.log(foo, bar, baz); // 1, 2, 3 
 ```
 
 如果匹配时，右边没有对应的值，那么这个变量就等于`undefined`。
@@ -15,7 +15,7 @@ console.log(foo, bar, baz); //1, 2, 3
 ```javascript
 let [x, y] = [1, 2, 3];
 
-console.log(x, y); //1, 2
+console.log(x, y); // 1, 2
 ```
 
 如果左右两边数据类型不相等，则会报错
