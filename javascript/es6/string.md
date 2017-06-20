@@ -1,8 +1,6 @@
 # 字符串的扩展
 
-## 字符的Unicode表书法
-
-## codePointAt()
+## codePointAt
 
 JavaScript内部。字符以`UTF-16`的格式存储，每个字符固定`2`个字节。
 
