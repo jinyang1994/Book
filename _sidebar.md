@@ -1,6 +1,7 @@
 - JavaScript
     - [ECMAScript 6](javascript/es6/let-and-const.md)
     - [前端性能优化的三个维度](javascript/2017-06-21.md)
+    - [Web Worker](javascript/web-worker.md)
 
 - CSS
     - [敬请期待](css)
