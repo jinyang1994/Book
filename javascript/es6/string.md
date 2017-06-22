@@ -69,7 +69,7 @@ is32Bit('𠮷'); // true
 is32Bit('a'); // false
 ```
 
-### String.fromCodePoint
+## String.fromCodePoint
 
 ES5中`String.fromCharCode`，用于返回码点对应的字符，但是无法返回大于`0xFFFF`的字符（如`𠮷`）。
 
@@ -83,7 +83,7 @@ console.log(String.fromCodePoint(0x20BB7)); // 𠮷
 console.log(String.fromCodePoint(0x78, 0x1f680, 0x79) === 'x\uD83D\uDE80y'); // true
 ```
 
-### 字符串的遍历器接口
+## 字符串的遍历器接口
 
 ES6中，字符串添加了遍历器，这样不仅可以遍历字符串，而且还可以识别大于`0xFFFF`的字符串。
 
@@ -104,7 +104,7 @@ for (let i of text) {
 // 𠮷
 ```
 
-### at
+## at
 
 ES5中，`charAt`用来返回制定位置的字符，但是该方法不能返回大于`0xFFFF`的字符。
 
@@ -115,7 +115,7 @@ ES5中，`charAt`用来返回制定位置的字符，但是该方法不能返回
 '𠮷'.at(0); // 𠮷
 ```
 
-### normaliza
+## normaliza
 
 对于带有音调的字符，Unicode提供了两种方法，一种是提供带`重音符符号`的字符，比如`Ǒ`（\u01D1）。另一种是将两个字符`ˇ`（\u004F）、`O`（\u030C）合成一个字符`Ǒ`（\u004F\u030C）。
 
@@ -136,7 +136,7 @@ ES5中，`charAt`用来返回制定位置的字符，但是该方法不能返回
 
 但是`normalize`目前不能识别三个或三个以上字符的合成。
 
-### includes、startsWith、endsWith
+## includes、startsWith、endsWith
 
 * `includs`：返回布尔值，表示是否找到了参数字符串。
 * `startsWith`：返回布尔值，表示参数字符串是否在源字符串的头部。
@@ -160,7 +160,7 @@ console.log(s.endsWith('Hello', 5)); // true
 console.log(s.includes('Hello', 6)); // false
 ```
 
-### repeat
+## repeat
 
 `repeat`将当前字符串重复`n`次后返回一个新的字符串。
 
@@ -171,7 +171,7 @@ console.log(s.includes('Hello', 6)); // false
 * 当参数为`NaN`，视为`0`。
 * 当参数是字符串时，先将其转换为数字后判断。
 
-### padStart、padEnd
+## padStart、padEnd
 
 两个方法用来当字符串长度不够时补全字符串，`padStart`从头部补全，`padEnd`从尾部补全。
 
@@ -181,7 +181,7 @@ console.log(s.includes('Hello', 6)); // false
 * 当第二个参数加上原字符串长度大于第一个参数是，则对第二个参数的字符串进行截取。
 * 如果忽略了第二个字符串，则用空格补全。
 
-### 模板字符串
+## 模板字符串
 
 ```javascript
 let a = 1;
@@ -194,7 +194,7 @@ let str = `hello world ${a}!`; // 等价于 'hello world' + a + '!';
 
 模板字符串可以嵌套，可以引用。
 
-### 标签模板
+## 标签模板
 
 它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。这被称为“标签模板”功能（tagged template）。
 
