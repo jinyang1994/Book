@@ -87,7 +87,9 @@ Number.isSafeInteger(9007199254740993 - 990)
 
 `clz32`这个函数名就来自”count leading zero bits in 32-bit binary representations of a number“（计算32位整数的前导0）的缩写。
 
-对于小数。这个方法只考虑整数部分。
+对于小数。这个方
+-------
+法只考虑整数部分。
 
 ### Math.imul
 

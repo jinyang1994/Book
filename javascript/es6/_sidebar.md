@@ -4,5 +4,6 @@
     - [字符串的扩展](javascript/es6/string.md)
     - [正则的扩展](javascript/es6/regexp.md)
     - [数值的扩展](javascript/es6/number.md)
+    - [数组的扩展](javascript/es6/array.md)
 
 
