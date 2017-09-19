@@ -11,6 +11,11 @@
     
 - Node.js
     - [敬请期待](node)
+
+- Command Line
+    - [基础操作](command/base.md)
+    - [软件安装](command/software.md)
+    - [Git](command/git.md)
  
 - Vue
     - [敬请期待](vue)
@@ -20,4 +25,7 @@
     
 - Webkit内核    
     - [敬请期待](webkit)
+
+- 产品    
+    - [竞品分析](product/competitive-analysis.md)
 
