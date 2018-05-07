@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.css">
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
 <body>
   <div id="app"></div>
@@ -34,5 +35,17 @@
 <script src="//unpkg.com/vuep/dist/vuep.min.js"></script>
 <script src="//unpkg.com/babel-standalone/babel.min.js"></script>
 <script src="//unpkg.com/babel-plugin-transform-vue-jsx"></script>
-
+<script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '4d85d440e7c92fff9344',
+    clientSecret: 'a0abfcea93292fcfc51d842cd4d2a43ec99a52e3',
+    repo: 'Book',
+    owner: 'jinyang1994',
+    admin: ['jinyang1994'],
+    // facebook-like distraction free mode
+    distractionFreeMode: false
+  })
+</script>
 </html>
