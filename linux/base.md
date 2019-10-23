@@ -80,5 +80,10 @@ git status 查看状态
 
 git log 查看log
 
+## 开机自启动
+
+```
+cat /etc/rc.local
+```
 
 
